@@ -3,6 +3,7 @@ package com.codepath.android.booksearch.activities;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -39,7 +40,13 @@ public class BookDetailActivity extends AppCompatActivity {
                 .load(Uri.parse(book.getCoverUrl()))
                 .placeholder(R.drawable.ic_nocover)
                 .into(ivBookCover);
-        getSupportActionBar().setTitle(tvTitle.getText()); // set the top title
+        //getSupportActionBar().setTitle(tvTitle.getText()); // set the top title
+
+        // Find the toolbar view inside the activity layout
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarD);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        setSupportActionBar(toolbar);
 
     }
 

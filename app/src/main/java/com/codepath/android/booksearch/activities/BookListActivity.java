@@ -59,8 +59,12 @@ public class BookListActivity extends AppCompatActivity {
                 new ItemClickSupport.OnItemClickListener() {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                        Book book = abooks.get(position);
                         //Fire an intent
                         Intent i = new Intent(BookListActivity.this, BookDetailActivity.class);
+
+                        i.putExtra("book", book);
+
                         startActivity(i); // brings up the second activity
                     }
                 }
